@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    width: calc(var(--vw, 1vw) * 100);
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+}
+
+
+/* Todo: I need to fix --vw here, it doesnt work anymore */
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    width: calc(var(--vw, 1vw) * 90);
+    height: calc(var(--vh, 1vh) * 90);
+    overflow: hidden;
+    border: 1px solid black;
+    position: absolute;
+    left: calc(var(--vw, 1vw) * 5);
+    top: calc(var(--vh, 1vh) * 5);
+}
+
+#footer {
+    position: fixed;
+    bottom: 3vh;
+    bottom: calc(var(--vh, 1vh) * 3);
+    width: calc(var(--vw, 1vw) * 90);
+    left: calc(var(--vw, 1vw) * 5);
+    text-align: center;
+}
+
+#footer .left {
+    position: absolute;
+    left: 0px;
+    text-align: left;
+}
+
+#footer .right {
+    position: absolute;
+    right: 0px;
+    text-align: right;
+}
+
+.container canvas {
+    cursor: inherit;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.container #canvas-foreground {
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+.container #canvas-foreground .fg-img {
+    flex: 1;
+    /* background-repeat: repeat; */
+}
+
+#scroll-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+}
+
+#scroll-container #scroll-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#scroll-container.horizontal {
+    overflow-x: scroll;
+}
+
+#scroll-container.horizontal #scroll-element {
+    width: 500%;
+}
+
+#scroll-container #scroll-element {
+    position: absolute;
+    width: 100%;
+    height: 500%;
+    pointer-events: none;
+}
+
+
+/* Home stuff */
+
+#users {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#users div {
+    position: absolute;
+    width: 2vh;
+    height: 1vh;
+    background: yellow;
+    border-radius: 100%;
+}
+
+.container ul {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container ul li {
+    position: absolute;
+}
